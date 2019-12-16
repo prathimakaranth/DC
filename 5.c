@@ -20,7 +20,6 @@ void populate_points() {
     points[i][0] = rand() % 100;
     points[i][1] = rand() % 100;
     }
-    int i;
     // Initialize cluster_count
     for (i=0; i<K; i++) {
     cluster_count[i] = 0;
