@@ -7,7 +7,7 @@
 
 int num_threads;
 long num_points;
-long points[num_points][2]; // 2D array points[x][0] -> point location, points[x][1] -> distance from cluster mean
+long** points;  // 2D array points[x][0] -> point location, points[x][1] -> distance from cluster mean
 int cluster[K][2] = {
     {75, 25}, {25, 25}, {25, 75}, {75, 75}
 };
@@ -16,6 +16,10 @@ long cluster_count[K];
 void populate_points() {
     // Dynamically allocate points[num_points][2] 2D array
     long i;
+    points = (long **) malloc(sizeof(long) * num_points); ;
+	for (i=0; i<num_points; i++)
+	points[i] = (long *) malloc(sizeof(long) * 2); 
+
     for (i=0; i<num_points; i++) {
     points[i][0] = rand() % 100;
     points[i][1] = rand() % 100;
