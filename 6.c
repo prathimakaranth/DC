@@ -3,7 +3,7 @@
 #include <string.h>
 #include <omp.h>
 
-int main(intargc, char *argv[]) {
+int main(int argc, char *argv[]) {
 	if (argc< 4) {
 		printf("Usage: ./negative input.png output.png num_threads\n");
 		return 1;
@@ -21,7 +21,7 @@ int main(intargc, char *argv[]) {
 		return 1;
 	}
 
-	gdImagePtrimg = gdImageCreateFromPng(fp);
+	gdImagePtr img = gdImageCreateFromPng(fp);
 	int width = gdImageSX(img);
 	int height = gdImageSY(img);
 	double t1 = omp_get_wtime();

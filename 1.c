@@ -6,6 +6,7 @@ void merge(int a[],int i1,int j1,int i2,int j2);
 
 int main()
 {
+    omp_set_nested(1);
     int num, i;
     scanf("%d",&num);
     int a[num];
