@@ -4,21 +4,19 @@
 #include<math.h>
 
 int *prime_table(int prime_num){
-	int i,j,p,prime;
+	int i=2,j,p=0,primeflag;
 	int primes[prime_num];
 	//primes=(int*)malloc(prime_num*sizeof(int));
-	i=2;
-	p=0;
 	while(p<prime_num)
 	{
-		prime=1;
+		primeflag=1;
 		for(j=2;j<i;j++){
 			if((i%j)==0){
-				prime=0;
+				primeflag=0;
 				break;
 			}
 		}
-		if(prime){
+		if(primeflag){
 			primes[p]=i;
 			p+=1;
 		}

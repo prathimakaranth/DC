@@ -17,6 +17,7 @@ int main()
     printf("\nUnsorted array :\n");
     for(i=0;i<num;i++)
         printf("%d ",a[i]);
+    printf("\n");
     
     double t1 = omp_get_wtime();
     mergesort(a, 0, num-1);
