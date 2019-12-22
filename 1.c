@@ -6,7 +6,7 @@ void merge(int a[],int i1,int j1,int i2,int j2);
 
 int main()
 {
-    omp_set_nested(1);
+    omp_set_nested(1); //Enables nested parallelism.
     int num, i;
     scanf("%d",&num);
     int a[num];
@@ -20,7 +20,7 @@ int main()
         printf("%d ",a[i]);
     printf("\n");
     
-    double t1 = omp_get_wtime();
+    double t1 = omp_get_wtime(); //Returns a value in seconds of the time elapsed from some point.
     mergesort(a, 0, num-1);
     double t2 = omp_get_wtime();
     printf("Time taken = %lf",t2-t1);
